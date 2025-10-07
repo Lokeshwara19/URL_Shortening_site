@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Result short url</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Short url</h2>
+    <p>
+        <strong>Generate short url :</strong>
+        <a href="{{shorturl}}">{{shorturl}}</a>
+    </p>
+    <p>
+        URL expires in {{expiry}} minutes
+    </p>
+    <a href="{{url_for('index')}}"> short another url</a>
+</body>
+</html>

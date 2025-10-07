@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>main page</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            /* justify-content: center;
+            align-items: center; */
+        }
+        input,select,button {
+            padding: 5px;
+            margin: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        <h1>Url shortner</h1>
+        <input type="url" name="url" placeholder="enter url" required>
+        <select name="expiryurl">
+            <option value="1">1 minute</option>
+            <option value="5">5 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="60">1 hour</option>
+            <option value="1440">1 day</option>
+        </select>
+        <button type="submit"> Short url</button>
+    </form>
+
+</body>
+
+</html>
