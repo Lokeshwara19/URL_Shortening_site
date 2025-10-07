@@ -36,7 +36,7 @@ def genrate_unique_code(length=7):
 def index():
     if request.method == 'POST':
         url = request.form['url']
-        expiry_time = int(request.form['expiryurl'])  # ✅ convert to int
+        expiry_time = int(request.form['expiryurl'])
         short_code = exixting_url(url)
         if not short_code:
             short_code = genrate_unique_code()
@@ -52,7 +52,7 @@ def index():
 
 
 @app.route('/<short_code>')
-def redirect_to_url(short_code):  # ✅ renamed function to avoid conflict with flask.redirect
+def redirect_to_url(short_code):  
     entry = collection.find_one({"short_code": short_code})
     if entry:
         if entry["expiry"] > datetime.datetime.utcnow():
